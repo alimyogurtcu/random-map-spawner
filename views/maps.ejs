@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lat/Lng Object Literal</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style>
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+    <!-- jsFiddle will insert css and js -->
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="//api-maps.yandex.ru/2.1/?lang=tr_TR" type="text/javascript"></script>
+    <script>
+        //Map
+        ymaps.ready(init);
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [<%= `${coordinates[0].latitude}`%>, <%= `${coordinates[0].longitude}`%>],
+                zoom: 2,
+                controls: ['zoomControl']
+            });
+            <% for(var i=0; i<coordinates.length; i++) {%>
+            myMap.geoObjects.add(new ymaps.Placemark([<%= `${coordinates[i].latitude}`%>, <%= `${coordinates[i].longitude}`%>]));
+            <%}%>
+            myMap.behaviors.disable('scrollZoom');
+        }
+    </script>
+</body>
+
+</html>

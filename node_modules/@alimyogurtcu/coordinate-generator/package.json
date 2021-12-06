@@ -1,0 +1,36 @@
+{
+  "name": "@alimyogurtcu/coordinate-generator",
+  "description": "Random coordinate generator",
+  "version": "1.0.0",
+  "main": "./build/index.js",
+  "builtEntry": "./build/index.js",
+  "private": false,
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "random-coordinate-generator"
+  ],
+  "scripts": {
+    "build": "npx babel src -d ./build --copy-files",
+    "dev": "npx babel src -d ./build --copy-files --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alimyogurtcu/random-coordinate-generator.git"
+  },
+  "author": "Alim Yogurtcu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alimyogurtcu/random-coordinate-generator/issues"
+  },
+  "homepage": "https://github.com/alimyogurtcu/random-coordinate-generator#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/register": "^7.16.0"
+  }
+}
